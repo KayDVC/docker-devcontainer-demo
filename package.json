@@ -20,13 +20,55 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}'",
+    "lint-fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx}'"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "ignorePatterns": [],
+    "rules": {
+      "block-spacing": [
+        "warn",
+        "always"
+      ],
+      "semi-spacing": [
+        "warn",
+        {
+          "before": true,
+          "after": true
+        }
+      ],
+      "arrow-spacing": [
+        "warn",
+        {
+          "before": true,
+          "after": true
+        }
+      ],
+      "object-curly-spacing": [
+        "warn",
+        "always"
+      ],
+      "keyword-spacing": [
+        "warn",
+        {
+          "before": true,
+          "after": true
+        }
+      ],
+      "spaced-comment": [
+        "warn",
+        "always"
+      ],
+      "indent": [
+        "warn",
+        4
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -39,5 +81,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0"
   }
 }

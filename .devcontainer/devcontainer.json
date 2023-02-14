@@ -1,0 +1,8 @@
+{
+    "name": "Test Application",
+    "build":{
+        "context": "..",
+        "dockerfile": "Dockerfile"
+    },
+    "forwardPorts": [3000]
+}
