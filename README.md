@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+## Prereqs 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- You're going to need to download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/) for your OS. This comes with the Docker CLI, Engine, and Docker Compose which we'll be heavily relying on.
 
-## Available Scripts
+- You should also install the [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) within VSCode. You can do this by:
+    1)  Opening VSCode
+    2)  Clicking the extensions icon
+    ![This is where the Extensions shortcut is](./Assets/extensions_location.png)
+    3) Search Dev Containers. Should look like this.
+    ![This is what Dev Containers looks like](./Assets/devcontainers.png)
+    4) Install
+    5) Restart VSCode after installation.
 
-In the project directory, you can run:
+## Docker Basics
 
-### `npm start`
+- Whenever doing anything with docker, make sure its process is running in the background. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- The only command you will generally need to run is `docker compose build` when building the a new image,`docker compose up` to start the image(s), and `docker compose down` when troubleshooting. 
+    - Note:  `docker compose up --build` is the shorthand command to both build and start the image(s).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- To start run open a command terminal, preferably in the VSCode window, and run the command `docker compose build` to build a new image. This will be the crux of the development environment shared across the team.
+    - The base image is alpine linux, a very small and portable distribution of linux, with python installed. There are also other applications like git and an SSH client installed for our convenience.
+    - At this stage, you should not have any errors. If you do, double check that your Docker Engine is running either by reopening the program or checking your running processes.
 
-### `npm test`
+- **The next step will utilize port 4001.** This is normally not an issue unless you know you have some other process running on this port.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Continue by running `docker compose up`. This may take a few moments since the image has to build from scratch for the first time. On subsequent runs, the process will be radically shorter. Output should look somewhat like this.
 
-### `npm run build`
+![Docker Output should look like this](./Assets/docker_compose_up_output.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Note the section pointed to. Copy and paste this address in any web browser. It should open up a page created using Flask, a python API module.
+    - You can also access this page by going to [localhost:4001](localhost:4001)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Problems with this approach.
+- You might have noticed that this only help when it comes to program execution. You don't have to have Python or Flask installed on your local machine but for regular coding scenarios like interactive testing, repo pushing, and debugging, this approach doesn't offer too much help.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Dev Containers
+- Dev Containers are almost exactly like you're regular setup but exist as a virtual environment. This means they can be customized and then used as a template for others' use.
 
-### `npm run eject`
+- In the bottom right hand corner of your VSCode window you should see a new icon.
+![This is what the new icon should look like](./Assets/external_connection_icon.png)
+    1. Click it.
+    2. A menu of options will pop up. Click *"Reopen in Container"*. Your options may look different depending on your other installed extensions.  ![Menu Option you want](./Assets/devcontainer_option.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- This may take a moment to load as the container has to read and execute all the instructions for setup.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Once you're in, 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
