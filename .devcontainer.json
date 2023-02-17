@@ -1,0 +1,7 @@
+{
+    "name": "Simple Full Stack App",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "flaskapp",
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/flaskapp"
+}

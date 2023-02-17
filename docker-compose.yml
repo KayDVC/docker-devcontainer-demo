@@ -1,0 +1,10 @@
+version: "test 0.1"
+services:
+  flaskapp:
+    build: .
+    ports:
+      - "4001:4001"
+    command: flask run --no-debugger -h 0.0.0.0 -p 4001
+    volumes:
+      - ./:/flaskapp:cached
+      
