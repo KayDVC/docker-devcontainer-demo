@@ -18,7 +18,7 @@
 
 - Whenever doing anything with docker, make sure its process is running in the background. Either open the app or check your background processes if you're unsure.
 
-- The only command you will generally need to run is `docker compose build` when building the a new image,`docker compose up` to start the image(s), and `docker compose down` when troubleshooting. 
+- The only command you will generally need to run for this demo is `docker compose build` when building the a new image,`docker compose up` to start the image(s), and `docker compose down` when troubleshooting. 
     - Note:  `docker compose up --build` is the shorthand command to both build and start the image(s).
 
 - To start, open a command terminal the VSCode window and run the command `docker compose build` to build a new image. This will be the crux of the development environment shared across the team.
