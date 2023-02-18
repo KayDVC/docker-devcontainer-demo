@@ -12,7 +12,7 @@
     4) Install
     5) Restart VSCode after installation.
 
-- You'll need to reopen VScode in the **tool-test** folder.
+- You'll need to reopen VScode in the **docker-devcontainer-demo** folder.
 
 ## Docker Basics
 
@@ -50,13 +50,11 @@
 ## Solution: Dev Containers
 - Dev Containers are almost exactly like you're regular setup but exist as a virtual environment. This means they can be customized and then used as a template for others' use.
 
-
-
 - In the bottom right hand corner of your VSCode window you should see a new icon.
 ![This is what the new icon should look like](./Assets/external_connection_icon.png)
     1. Click it.
     2. A menu of options will pop up. Click *"Reopen in Container"*. Your options may look different depending on your other installed extensions.  ![Menu Option you want](./Assets/devcontainer_option.png)
-    - **Make sure your VSCode is open in the folder containing the source code (test-repo). If you're unsure or seeing errors reopen VSCode in the _'test-repo'_ folder**
+    - **Make sure your VSCode is open in the folder containing the source code (docker-devcontainer-demo). If you're unsure or seeing errors reopen VSCode in the _'docker-devcontainer-demo'_ folder**
         - You should also see a prompt that asks you if you'd like to reopen the folder in the dev container if you're in the correct folder.
 
 - This may take a moment to load as the container has to read and execute all the instructions for setup.
