@@ -1,10 +1,9 @@
-version: "test 0.1"
+version: "test lone program"
 services:
   flaskapp:
     build: .
     ports:
       - "4001:4001"
     volumes:
-      - ./:/flaskapp:cached
-    command: ['sleep', 'infinity']
-      
+      - ./:/home/NRuser/flaskapp/
+    command: flask run -h 0.0.0.0 -p 4001

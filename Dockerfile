@@ -1,6 +1,7 @@
 FROM python:alpine3.16
-ARG USERNAME=NRuser
-ARG REL_DIR=/home/${USERNAME}
+ARG username=NRuser
+ARG reldir=/home/${username}
+ARG workdir=${reldir}/flaskapp
 
 # Requires root user perms.
 RUN apk update
@@ -8,12 +9,14 @@ RUN apk add openssh
 RUN apk add git
 
 # Create and switch to non-Root User.
-RUN mkdir ${REL_DIR}
-RUN adduser --disabled-password -h ${REL_DIR} ${USERNAME} 
-USER ${USERNAME}
-WORKDIR ${REL_DIR}/flaskapp
+RUN mkdir ${reldir}
+RUN adduser --disabled-password -h ${reldir} ${username} 
+USER ${username}
+WORKDIR ${workdir}
 
 # Update Package Management and Install Dependences
+RUN python3 -m venv ${reldir}/env
+ENV PATH=${reldir}/env/bin:$PATH
 RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
@@ -23,14 +26,11 @@ COPY . .
 
 # Grant RMW access to all files in Home Dir for NRuser.
 USER root
-RUN chown -R ${USERNAME} ${REL_DIR}
+RUN chown -R ${username} ${reldir}
 
 # Switch back to NRuser.
-USER ${USERNAME}
+USER ${username}
 
 EXPOSE 4001
-
-ENTRYPOINT [ "cd" "./flaskapp" ]
-
 
 

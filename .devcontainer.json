@@ -3,7 +3,7 @@
     "dockerComposeFile": "docker-compose.yml",
     "service": "flaskapp",
     "shutdownAction": "stopCompose",
-	"workspaceFolder": "/flaskapp",
+    "workspaceFolder": "/home/NRuser/flaskapp/",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -11,5 +11,6 @@
 				"donjayamanne.python-extension-pack"
 			]
 		}
-	}
+	},
+    "postCreateCommand": "chmod +x scripts/init.sh && scripts/init.sh"
 }

@@ -22,14 +22,24 @@
     - The base image is alpine linux, a very small and portable distribution of linux, with python installed. There are also other applications like git and an SSH client installed for our convenience.
     - At this stage, you should not have any errors. If you do, double check that your Docker Engine is running either by reopening the program or checking your running processes.
 
-- **The next step will utilize port 4001.** This is normally not an issue unless you know you have some other process running on this port.
+- **The next sections will utilize port 4001 & 4002.** This is normally not an issue unless you know you have some other process running on this port.
 
 - Continue by running `docker compose up`. This may take a few moments since the image has to build from scratch for the first time. On subsequent runs, the process will be radically shorter. Output should look somewhat like this.
 
 ![Docker Output should look like this](./Assets/docker_compose_up_output.png)
 
 - Note the section pointed to. Copy and paste this address in any web browser. It should open up a page created using Flask, a python API module.
-    - You can also access this page by going to [localhost:4001](localhost:4001)
+    - You can also access this page by going to [localhost:4001](http://localhost:4001)
+
+- Pros: 
+    1. One and done approach. Setup once and continue to use.
+    2. Combine multiple different images to compose one app. For instance, you can have a image with nodejs (Frontend/Backend) + an image with mongodb (Database) running at the same time to form an entire application.
+    3. Portable. Share the dockerfiles and run them. That's it.
+
+- Cons: 
+    1. Only helps when it comes to executing the program. Developing and troubleshooting do not benefit from the inclusion of docker.
+    2. Simple setup but terrible documentation :smiley:.
+    3. Very limited support for realtime actions like the python interactive console, etc...
 
 ## Problems with this approach.
 - You might have noticed that this only help when it comes to program execution. You don't have to have Python or Flask installed on your local machine but for regular coding scenarios like interactive testing, repo pushing, and debugging, this approach doesn't offer too much help.
@@ -43,6 +53,18 @@
     2. A menu of options will pop up. Click *"Reopen in Container"*. Your options may look different depending on your other installed extensions.  ![Menu Option you want](./Assets/devcontainer_option.png)
 
 - This may take a moment to load as the container has to read and execute all the instructions for setup.
+- Note the console output. Though the startup script itself doesn't do much, the fact that it can be done is **really helpful**. Take a look around, see how similar the environment is to what you regularly use.
+- Try these out in the terminal to explore the capabilities:
+    1. Run `cd ~/flaskapp`, then `scripts/runSite.sh`. This should start the site yet again at [localhost:4002](http://localhost:4002). Note: [localhost:4001](http://localhost:4001) is running the same site because I was too lazy to find a workaround. _`Control + C` to exit_.
+    2. Run `python` to use the interactive cli. Useful for quick testing. _`exit()` or `Control+D` to exit_.
+    3. Run `python console_app.py` to run a more tradition command line program.
 
-- Once you're in, 
+- Pros: 
+    1. Extensions, packages, language compilers, coding helpers, etc... An entire environment can be setup to develop, test, and execute code. 
+    2. OS and other system differences are also minimized because all members will be using linux.
+    3. Minimal setup required past original dockerfiles.
+    4. Setup once, and use forever. No real maintenance required.
 
+- Cons: 
+    1. May require one-time setup troubleshooting. Especially when it comes to git configuration. 
+        - Helpful commands: `ssh-add {filename}`
