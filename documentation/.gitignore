@@ -1,0 +1,4 @@
+# Ignore everything in dir except readme and local git ignore file
+*
+!readme.md
+!.gitignore

@@ -2,10 +2,4 @@
 
 # dependencies
 /__pycache__
-
-documentation/html
-documentation/latex
-
-
-
 .git
