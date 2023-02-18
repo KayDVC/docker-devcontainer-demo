@@ -61,7 +61,7 @@
 
 - This may take a moment to load as the container has to read and execute all the instructions for setup.
 
-- Note the console output. Though the startup script itself doesn't do much, the fact that it can be done is **really helpful**. Take a look around, see how similar the environment is to what you regularly use.
+- Note the console output. Though the startup script itself doesn't do much, the fact that it can be done is **really helpful**. Take a look around, see how similar the environment is to what you regularly use. If not, edit the dockerfile to install new packages, shells, compilers, etc... .
 
 - Try these out in the terminal to explore the capabilities:
     1. Run `cd ~/flaskapp`, then `scripts/runSite.sh`. This should start the site yet again at [localhost:4002](http://localhost:4002). Note: [localhost:4001](http://localhost:4001) is running the same site because I was too lazy to find a workaround. _`Control + C` to exit_.
@@ -79,4 +79,4 @@
 
 - Cons: 
     1. May require one-time setup troubleshooting. Especially when it comes to git configuration. 
-        - Helpful commands: `ssh-add {filename}`
+        - Helpful commands: `ssh-add {ssh_id filename}` on UNIX
