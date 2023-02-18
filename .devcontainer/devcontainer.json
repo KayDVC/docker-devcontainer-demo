@@ -1,6 +1,6 @@
 {
     "name": "Simple Full Stack App",
-    "dockerComposeFile": "../dockerfiles/docker-compose.yml",
+    "dockerComposeFile": "./../dockerfiles/docker-compose.yml",
     "service": "flaskapp",
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/home/NRuser/flaskapp/",
@@ -13,5 +13,6 @@
 			]
 		}
 	},
+    "overrideCommand": true,
     "postCreateCommand": "chmod +x scripts/init.sh && scripts/init.sh"
 }
