@@ -19,7 +19,7 @@ WORKDIR ${workdir}
 RUN python3 -m venv ${reldir}/env
 ENV PATH=${reldir}/env/bin:$PATH
 RUN pip install --upgrade pip
-COPY requirements.txt .
+COPY ./pythonfiles/requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy source files
@@ -31,6 +31,8 @@ RUN chown -R ${username} ${reldir}
 
 # Switch back to NRuser.
 USER ${username}
+
+ENTRYPOINT [ "sh", "-c", "cd pythonfiles && flask run -h 0.0.0.0 -p 4001" ]
 
 EXPOSE 4001
 

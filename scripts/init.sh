@@ -10,7 +10,7 @@ function prep_scripts (){
 
     echo "Granting execute perms for all scripts in folder."
 
-    for script in *; do chmod +x $script; done;
+    for script in ./scripts/*; do chmod +x $script; done;
     
     completed=$((completed+1))
 

@@ -1,2 +1,2 @@
 #!/bin/sh
-flask run -h 0.0.0.0 -p 4002
+cd ~/flaskapp/pythonfiles && flask run -h 0.0.0.0 -p 4002

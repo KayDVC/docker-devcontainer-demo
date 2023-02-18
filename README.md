@@ -21,15 +21,14 @@
 - The only command you will generally need to run for this demo is `docker compose build` when building the a new image,`docker compose up` to start the image(s), and `docker compose down` when troubleshooting. 
     - Note:  `docker compose up --build` is the shorthand command to both build and start the image(s).
 
-- To start, open a command terminal the VSCode window and run the command `docker compose build` to build a new image. This will be the crux of the development environment shared across the team.
-    - The base image is alpine linux, a very small and portable distribution of linux, with python installed. There are also other applications like git and an SSH client installed for our convenience.
-    - At this stage, you should not have any errors. If you do, double check that your Docker Engine and you're running these commands within VScode's terminal.
-
 - **The next sections will utilize port 4001 & 4002.** This is normally not an issue unless you know you have some other process running on these ports.
 
-- Continue by running `docker compose up`. This may take a few moments since the image has to build from scratch for the first time. On subsequent runs, the process will be way shorter. Output should look somewhat like this.
+- To start, open a command terminal the VSCode window and run the command `cd dockerfiles` then, `docker compose up --build` to build and start a new image.
+    - This may take a few moments since the image has to build from scratch for the first time. On subsequent runs, the process will be way shorter. Output should look somewhat like this.
+    ![Docker Output should look like this](./Assets/docker_compose_up_output.png)
 
-![Docker Output should look like this](./Assets/docker_compose_up_output.png)
+    - The base image is alpine linux, a very small and portable distribution of linux, with python installed. There are also other applications like git and an SSH client installed for our convenience.
+    - At this stage, you should not have any errors. If you do, double check that your Docker Engine and you're running these commands within VScode's terminal. A common error is "no configuration file provided: not found". This means you are not in the dockerfiles directory within the terminal.
 
 - Note the section pointed to. Copy and paste this address in any web browser. It should open up a page created using Flask, a python API module.
     - You can also access this page by going to [localhost:4001](http://localhost:4001)
@@ -64,8 +63,8 @@
 - Try these out in the terminal to explore the capabilities:
     1. Run `cd ~/flaskapp`, then `scripts/runSite.sh`. This should start the site yet again at [localhost:4002](http://localhost:4002). Note: [localhost:4001](http://localhost:4001) is running the same site because I was too lazy to find a workaround. _`Control + C` to exit_.
     2. Run `python` to use the interactive cli. Useful for quick testing. _`exit()` or `Control+D` to exit_.
-    3. Run `python console_app.py` to run a more tradition command line program.
-    4. Run `doxygen`. This will update the 'documentation' folder. Open documentation/html then, find and **open** 'index.html'. Right-Click on it then select "Open with Live Server".
+    3. Run `python pythonfiles/console_app.py` to run a more tradition command line program.
+    4. Run `scripts/runDoxygen.sh`. This will update the 'documentation' folder. Open documentation/html then, find and **open** 'index.html'. Right-Click on it then select "Open with Live Server".
     ![example](./Assets/doxygen_instructions.png)
 
 
@@ -78,3 +77,7 @@
 - Cons: 
     1. May require one-time setup troubleshooting. Especially when it comes to git configuration. 
         - Helpful commands: `ssh-add {ssh_id filename}` on UNIX
+
+** Side Note: Demo was originally developed for a specific project for undergrad studies and may have some inconsistences with current repo. Feel free to leave suggestions on how I can make this demo better.
+
+\- Kay

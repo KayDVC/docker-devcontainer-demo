@@ -1,0 +1,10 @@
+version: "test lone program"
+services:
+  flaskapp:
+    build: 
+      context: ./../
+      dockerfile: dockerfiles/Dockerfile
+    ports:
+      - "4001:4001"
+    volumes:
+      - ../:/home/NRuser/flaskapp/
