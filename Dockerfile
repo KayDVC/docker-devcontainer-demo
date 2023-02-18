@@ -7,6 +7,7 @@ ARG workdir=${reldir}/flaskapp
 RUN apk update
 RUN apk add openssh
 RUN apk add git
+RUN apk add doxygen
 
 # Create and switch to non-Root User.
 RUN mkdir ${reldir}

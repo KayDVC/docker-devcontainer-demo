@@ -1,3 +1,11 @@
+## @file console_app.py
+# @brief A console application to demonstrate interactive mode
+
+######################################################################
+# @brief Replaces characters in data with specified replacement chars
+# @param[in] data: a 2d list of characters to use 
+# @param[in] replacements: a 2d of characters and their replacements
+######################################################################
 def replace_characters(data, replacements):
     lines = []
     
