@@ -62,6 +62,8 @@
     1. Run `cd ~/flaskapp`, then `scripts/runSite.sh`. This should start the site yet again at [localhost:4002](http://localhost:4002). Note: [localhost:4001](http://localhost:4001) is running the same site because I was too lazy to find a workaround. _`Control + C` to exit_.
     2. Run `python` to use the interactive cli. Useful for quick testing. _`exit()` or `Control+D` to exit_.
     3. Run `python console_app.py` to run a more tradition command line program.
+    4. Run `doxygen`. This will update the 'documentation' folder. Open documentation/html then, find and **open** 'index.html'. Right-Click on it then select "Open with Live Server".
+    ![example](./Assets/doxygen_instructions.png)
 
 - Pros: 
     1. Extensions, packages, language compilers, coding helpers, etc... An entire environment can be setup to develop, test, and execute code. 
