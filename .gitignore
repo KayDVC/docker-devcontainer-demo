@@ -3,3 +3,6 @@
 # dependencies
 /__pycache__
 .git
+
+# misc
+.DS_Store
