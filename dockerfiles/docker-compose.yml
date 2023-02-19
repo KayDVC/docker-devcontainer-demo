@@ -1,4 +1,4 @@
-version: "test lone program"
+version: "Docker and DevContainer Demo"
 services:
   flaskapp:
     build: 
