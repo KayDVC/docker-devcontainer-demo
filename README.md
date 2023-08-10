@@ -41,7 +41,6 @@
 - Cons: 
     1. Only helps when it comes to executing the program. Actual coding and troubleshooting don't get better from the inclusion of docker.
     2. Simple setup but terrible documentation :smiley:.
-    3. Very limited support for realtime actions like the python interactive console, etc... .
 
 ## Problems with this approach.
 - You might have noticed that this only help when it comes to program execution. You don't have to have Python or Flask installed on your local machine but for regular coding scenarios like interactive testing, repo pushing, and debugging, docker by itself doesn't offer too much help.
