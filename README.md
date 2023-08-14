@@ -2,7 +2,7 @@
 
 A simple demo of the power of DevOps using Docker and Visual Studio Code (VSCode).
 
-** Disclaimer: This demo was originally made for a [specific project](https://github.com/HelloWorldSeniorProject/AirKeys) and may have some inconsistences with current repo, deprecated functionality, or rookie mistakes. Feel free to leave suggestions on how I can make this demo better.
+** Disclaimer: This demo was originally made for a [specific project](https://github.com/HelloWorldSeniorProject/AirKeys) and may have some inconsistences with current repo, deprecated functionality, or rookie mistakes. Also, the demo's structure is unnecessarily separated; this is not typical and was done this way specifically because it's a demo. Feel free to leave suggestions on how I can make this demo better.
 
 ### Table of Contents
 1. [Prereqs](#prerequisites)
