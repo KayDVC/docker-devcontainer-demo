@@ -13,7 +13,7 @@ A simple demo of the power of DevOps using Docker and Visual Studio Code (VSCode
 3. [Solution: Dev Containers](#solution-devcontainers)
     * [Using w/ VSCode](#using-with-vscode)
     * [Demo](#demo-1)
-    * [Pros & Cons](#pros--cons)
+    * [Pros & Cons](#pros--cons-1)
 
 
 ### Prerequisites
